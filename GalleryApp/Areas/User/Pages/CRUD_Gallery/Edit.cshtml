@@ -1,0 +1,51 @@
+﻿@page
+@model GalleryApp.Areas.User.CRUD_Gallery.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Gallery</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Gallery.Id" />
+            <div class="form-group">
+                <label asp-for="Gallery.CreatorId" class="control-label"></label>
+                <input asp-for="Gallery.CreatorId"  type="hidden" class="form-control"/>                
+            </div>
+            <div class="form-group">
+                <label asp-for="Gallery.Name" class="control-label"></label>
+                <input asp-for="Gallery.Name" class="form-control" />
+                <span asp-validation-for="Gallery.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gallery.Description" class="control-label"></label>
+                <input asp-for="Gallery.Description" class="form-control" />
+                <span asp-validation-for="Gallery.Description" class="text-danger"></span>
+            </div>
+            <div class="checkbox">
+                <label asp-for="Gallery.isPublic" class="form-label">
+                    <input class="form-check-input" asp-for="Gallery.isPublic" />
+                    @Html.DisplayNameFor(m => m.Gallery.isPublic)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    @if(!(@Model.Gallery.Name.Contains("Default Gallery"))) {<a asp-page="./Delete" asp-route-id="Gallery.Id">Delete</a>}       
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
