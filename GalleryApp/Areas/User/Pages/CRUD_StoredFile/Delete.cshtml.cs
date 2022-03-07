@@ -63,7 +63,10 @@ namespace GalleryApp.Areas.User.CRUD_StoredFile
                 _context.Files.Remove(StoredFile);
                 //await _context.SaveChangesAsync();
                 GalleryStoredFiles = _context.GalleryStoredFiles.Include(s => s.Gallery).Where(g => g.StoredFileId == id).ToList();
-
+                foreach(var g in GalleryStoredFiles)
+                {
+                    if (g.Gallery.IdThumbnail == id) g.Gallery.IdThumbnail = null; //pokud byl obrázek thumbnailem v nějaké galerii
+                }
                 //Vymaže z fyzického disku
                 
                 var path = Path.Combine("Uploads", id.ToString());

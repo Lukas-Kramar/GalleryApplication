@@ -169,19 +169,18 @@ namespace GalleryApp.Areas.User.CRUD_Gallery
             Gallery = await _context.Galleries    
               .Include(g => g.StoredPictures)
               .Where(g => g.Id == Int32.Parse(galleryid))
-              .SingleOrDefaultAsync();
-
-            Console.WriteLine(Gallery.Name);
-            Console.WriteLine($"Relation has to contain gallery ID: {Gallery.Id} and {file.Id}");
-            var galleryStoredFile = new GalleryStoredFile { GalleryId = Gallery.Id, StoredFileId = file.Id, Gallery = Gallery };            
-            Console.WriteLine(Gallery.StoredPictures.ToList().Contains(galleryStoredFile));
-            if ( Gallery.StoredPictures.Contains(new GalleryStoredFile { GalleryId = Gallery.Id, Gallery = Gallery, StoredFileId = file.Id}))
+              .SingleOrDefaultAsync();            
+            var galleryStoredFile = _context.GalleryStoredFiles.Where(g => g.GalleryId == Gallery.Id).Where(g => g.StoredFileId == file.Id).FirstOrDefault();            
+            if ( galleryStoredFile != null)
             {
-                Console.WriteLine("done this");
                 Gallery.IdThumbnail = file.Id;
                 _context.Attach(Gallery).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 SuccessMessage = "Changed gallery thumbnail";
+            }
+            else
+            {
+                ErrorMessage = "Picture isnt´t in this gallery";
             }
             return RedirectToPage("./Index");
 

@@ -60,7 +60,7 @@ namespace GalleryApp.Areas.User.CRUD_Gallery
                     Console.WriteLine("Thumbnail ID je:" + g.IdThumbnail.ToString());
                     g.IdThumbnail = (g.IdThumbnail == null) ?
                     _context.Files.Where(f => f.Id == g.StoredPictures.FirstOrDefault().StoredFileId).FirstOrDefault().Id :
-                    _context.Files.Where(f => f.Id == g.IdThumbnail).FirstOrDefault().Id;                    
+                    _context.Files.Where(f => f.Id == g.IdThumbnail).FirstOrDefault().Id;
                 }
             }
         }

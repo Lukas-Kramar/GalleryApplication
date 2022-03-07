@@ -167,7 +167,7 @@ namespace GalleryApp.Migrations
                         new
                         {
                             Id = "a91913c7-a024-47d1-8f17-d388e7aeb211",
-                            ConcurrencyStamp = "a22a5e8f-c3d9-4155-8493-47450df402f5",
+                            ConcurrencyStamp = "4b86b485-dcf9-49cf-8354-203ea3bf3fe2",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -379,13 +379,13 @@ namespace GalleryApp.Migrations
                         {
                             Id = "fc7a69e4-c851-4eca-ba64-ac182cc4fc95",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "62186eba-e6b6-47ed-9668-59ea05a8a15f",
+                            ConcurrencyStamp = "bd8b5827-01c6-4a7d-b099-6188729eb51a",
                             Email = "lukkram019@pslib.cz",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "LUKKRAM019@PSLIB.CZ",
                             NormalizedUserName = "LUKKRAM019@PSLIB.CZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOsjzwlpemV9EbD55eC/haD45LgRS4a8jSehHOSiBfayAU0xLuNhJ/t8bQB/AVhLbA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL5D3/GXH4dBF3/2mbSjYIDlKYYJSzDNb+211QOJWigdbeq7QOY9xE6RxB8S4VMXwQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
