@@ -23,7 +23,6 @@ namespace GalleryApp.Pages
         public string ErrorMessage { get; set; }    
         public List<StoredFileListViewModel> StoredFiles { get; set; }
         public List<Gallery> Galleries { get; set; }
-        //public List<StoredFile>
 
         public IndexModel(ILogger<IndexModel> logger, IWebHostEnvironment environment, ApplicationDbContext context)
         {
@@ -58,6 +57,18 @@ namespace GalleryApp.Pages
                 .Where(g => g.isPublic == true)
                 .Take(12)
                 .ToList();
+
+            foreach (Gallery g in Galleries)
+            {
+                g.NumberOfPicture = _context.GalleryStoredFiles.Where(ga => ga.GalleryId == g.Id).Count();
+                if (g.NumberOfPicture > 0)
+                {
+                    Console.WriteLine("Thumbnail ID je:" + g.IdThumbnail.ToString());
+                    g.IdThumbnail = (g.IdThumbnail == null) ?
+                    _context.Files.Where(f => f.Id == g.StoredPictures.FirstOrDefault().StoredFileId).FirstOrDefault().Id :
+                    _context.Files.Where(f => f.Id == g.IdThumbnail).FirstOrDefault().Id;
+                }
+            }
 
             //var fullNames = Directory.GetFiles(Path.Combine(_environment.ContentRootPath, "Uploads")).ToList();
             //    foreach (var fn in fullNames)

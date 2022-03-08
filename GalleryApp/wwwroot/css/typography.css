@@ -9,7 +9,6 @@ line-height: 35px;
 color: var(--semidark);
 }
 
-
 h3{
     font-family: Roboto;
     font-style: normal;
@@ -17,6 +16,11 @@ h3{
     font-size: 17px;
     line-height: 20px;
     margin: 0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
 
 .Upload_text {
@@ -39,16 +43,43 @@ h3{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
-    line-height: 12px;
+    font-size: 16px;
+    line-height: 20px;
 }
 
-.Footer_Greeting{
-    font-family: Roboto;
+@font-face {
+    font-family: 'roboto';
+    src: url(../Fonts/Roboto-Black.ttf);
+    font-weight: 400;
     font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    grid-column-start: 1;
-    grid-column-end: 3;
+}
+
+@font-face {
+    font-family: 'roboto-bold';
+    src: url(../Fonts/Roboto-Bold.ttf);
+    font-weight: 700;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'roboto-italic';
+    src: url(../Fonts/Roboto-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'fredoka';
+    src: url(../Fonts/Fredoka-VariableFont_wdth\,wght.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+}
+html {
+    font-family: 'fredoka';
+    font-size: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'roboto';
 }

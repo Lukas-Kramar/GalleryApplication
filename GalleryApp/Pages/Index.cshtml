@@ -12,75 +12,63 @@
         <a class="Button_Sort">Creator</a>
         </div>*@
     <h3 class="Index_Main_Description">  12 newest public pictures</h3>
-    <div class="Index_Sorted">
+    <ul class="cards">
         @if (Model.StoredFiles.Count > 0)
         {
             @foreach (var f in Model.StoredFiles)
             {
-                @*<div class="Index_Picture">
-                    <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" />
-                    <p>@f.OriginalName</p>
-                    </div>*@
-                <div>
-                    <a href="" class="Photo">
-                        <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" />
-                        <div class="Photo__Overlay">
-                            <div class="Photo__Header">
-                                <svg class="Photo__Arc" xmlns="http://www.w3.org/2000/svg"><path d /></svg>
-                                <div class="Photo__Header-text">
-                                    <p class="Photo__Title">@f.OriginalName</p>
-                                    <span class="Photo__Status">1 hour ago</span>
+                <li>
+                    <a href="" class="card">
+                        <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" class="card__image" alt="@f.OriginalName" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                    <h3 class="card__title">@f.OriginalName</h3>
+                                    <span class="card__status">Creator: @f.Uploader.Email</span>
                                 </div>
                             </div>
-                            <p class="Photo__Description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            <ul class="card__description">
+                                <li>Uploaded at: @f.UploadedAt</li>
+                            </ul>
                         </div>
                     </a>
-                </div>
+                </li>
             }
         }
+
         else
         {
             <p class="No_Data"> There are no uploaded pictures</p>
         }
-    </div>
+    </ul>
     <h3 class="Index_Main_Description">12 newest public galleries</h3>
-    <div class="Index_Sorted">
+    <ul class="cards">
         @if (Model.Galleries.Count > 0)
         {
             @foreach (var f in Model.Galleries)
             {
-                <div>
-                    <a href="" class="Photo">
-                        <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" />
-                        <div class="Photo__Overlay">
-                            <div class="Photo__Header">
-                                @*<svg class="Photo__Arc" xmlns="http://www.w3.org/2000/svg"><path d /></svg>*@
-                                <div class="Photo__Header-text">
-                                    <p class="Photo__Title">@f.Name</p>
-                                    <span class="Photo__Status">1 hour ago</span>
+                <li>
+                    <a href="" class="card">
+                        <img src="@Url.Page("/Index","Thumbnail", new {filename=f.IdThumbnail })" class="card__image" alt="@f.Name" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                    <h3 class="card__title">@f.Name</h3>
+                                    <span class="card__status">Creator: @f.Creator.Email</span>
                                 </div>
                             </div>
-                            <p class="Photo__Description">@f.Creator.Email : Number of pictures @f.NumberOfPicture</p>
+                            <ul class="card__description">
+                                <li>Number of pictures: @f.NumberOfPicture</li>
+                            </ul>
                         </div>
                     </a>
-                </div>
+                </li>
             }
         }
         else
         {
             <p class="No_Data"> There are no uploaded galleries</p>
         }
-    </div>
-    @*<div class="Index_Sorted">
-        @if(Model.Galleries.Count > 0)
-        {
-        @foreach (var f in Model.Galleries)
-        {
-        <div class="Index_Picture">
-        <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" />
-        <p>@f.Name</p>
-        </div>
-        }
-        }
-        </div>*@
-</div>
+    </ul>

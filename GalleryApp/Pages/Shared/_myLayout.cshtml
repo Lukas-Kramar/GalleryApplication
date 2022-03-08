@@ -15,21 +15,18 @@
 <body>
     <header>
         <div class="Logo">
-
+            <h2>GalleryApp</h2>
         </div>
         <nav class="Nav_Bar">                            
-            <ul class="navbar-nav flex-grow-1">
+            <ul class="Nav_Ul">
                 <li class="Nav_Button">
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                    <a class="Nav_Button_Text" asp-area="" asp-page="/Index">Home</a>
                 </li>
                 <li class="Nav_Button">
-                    <a class="nav-link text-dark" asp-area="" asp-page="/Upload">Upload</a>
+                    <a class="Nav_Button_Text" asp-area="" asp-page="/Upload">Upload</a>
                 </li>
                 <li class="Nav_Button">
-                    <a class="nav-link text-dark" asp-area="User" asp-page="/CRUD_Gallery/Index">Galleries</a>
-                </li>
-                <li class="Nav_Button">
-                    <a class="nav-l" asp-area="User" asp-page="/CRUD_GalleryStoredFile/Index">Pictures</a>
+                    <a class="Nav_Button_Text" asp-area="User" asp-page="/CRUD_Gallery/Index">Galleries</a>
                 </li>
             </ul>
             @*<partial name="_LoginPartial" />*@                
@@ -37,26 +34,29 @@
         <footer>
             @if (SignInManager.IsSignedIn(User))
                 {
-                    <div class="Footer_Greeting">Hello @User.Identity?.Name! </div>
-                    <a class="Footer_Button" id="LogOut" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                        <div class="Footer_Login"> </div> Logout
+                    <p class="Footer_Greeting">Hello @User.Identity?.Name! </p>
+                    <a class="Footer_Button" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                        <img class="Footer_Icon" src="./images/Login.png" alt=""> 
+                        <h3>Logout</h3>
                     </a>
-                    <a class="Footer_Button id="Avatar" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-                        <div class="Footer_Avatar"> </div> Edit
+                    <a class="Footer_Button asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                        <img class="Footer_Icon" src="./images/Avatar.png" alt"">
+                        <h3>Registration</h3>
                     </a>
             }
             else
             {
+                <p class="Footer_Greeting">Anonym user</p>
                 <a class="Footer_Button" id="LogOut" asp-area="Identity" asp-page="/Account/Login">
-                    <img src="../wwwroot/images/Login.png" alt=""> 
+                    <img class="Footer_Icon" src="./images/Login.png" alt=""> 
                     <h3>Login</h3>
                 </a>
                 <a class="Footer_Button" id="Avatar" asp-area="Identity" asp-page="/Account/Register">
-                   <img src="../wwwroot/images/Avatar.png" alt"">
+                   <img class="Footer_Icon" src="./images/Avatar.png" alt"">
                    <h3>Registration</h3>
                 </a>
             }
-            <div class="Credentials">Made by Aldra1n from SPŠSE a VOŠ P3</div>
+            <p class="Credentials">Made by Aldra1n from SPŠSE a VOŠ P3</p>
         </footer>
     </header>
     
@@ -72,7 +72,8 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

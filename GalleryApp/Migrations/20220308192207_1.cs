@@ -255,12 +255,12 @@ namespace GalleryApp.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "a91913c7-a024-47d1-8f17-d388e7aeb211", "4b86b485-dcf9-49cf-8354-203ea3bf3fe2", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "a91913c7-a024-47d1-8f17-d388e7aeb211", "a49de2b4-05c4-4499-a59f-c0bcd65808eb", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DefaultGalleryId", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NickName", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fc7a69e4-c851-4eca-ba64-ac182cc4fc95", 0, "bd8b5827-01c6-4a7d-b099-6188729eb51a", 1, "AppUser", "lukkram019@pslib.cz", true, false, null, "Aldra1n", "LUKKRAM019@PSLIB.CZ", "LUKKRAM019@PSLIB.CZ", "AQAAAAEAACcQAAAAEL5D3/GXH4dBF3/2mbSjYIDlKYYJSzDNb+211QOJWigdbeq7QOY9xE6RxB8S4VMXwQ==", null, false, "", false, "lukkram019@pslib.cz" });
+                values: new object[] { "fc7a69e4-c851-4eca-ba64-ac182cc4fc95", 0, "d90e0edb-9bfa-40d9-81d1-dc766966f707", 1, "AppUser", "lukkram019@pslib.cz", true, false, null, "Aldra1n", "LUKKRAM019@PSLIB.CZ", "LUKKRAM019@PSLIB.CZ", "AQAAAAEAACcQAAAAELScqpS+lCqZ80byFUuwphRZnRLLoKPb4Yif+WCSQChAdDwpMr338MGkmbeb8Asf4w==", null, false, "", false, "lukkram019@pslib.cz" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GalleryApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220307172755_1")]
+    [Migration("20220308192207_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -169,7 +169,7 @@ namespace GalleryApp.Migrations
                         new
                         {
                             Id = "a91913c7-a024-47d1-8f17-d388e7aeb211",
-                            ConcurrencyStamp = "4b86b485-dcf9-49cf-8354-203ea3bf3fe2",
+                            ConcurrencyStamp = "a49de2b4-05c4-4499-a59f-c0bcd65808eb",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -381,13 +381,13 @@ namespace GalleryApp.Migrations
                         {
                             Id = "fc7a69e4-c851-4eca-ba64-ac182cc4fc95",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd8b5827-01c6-4a7d-b099-6188729eb51a",
+                            ConcurrencyStamp = "d90e0edb-9bfa-40d9-81d1-dc766966f707",
                             Email = "lukkram019@pslib.cz",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "LUKKRAM019@PSLIB.CZ",
                             NormalizedUserName = "LUKKRAM019@PSLIB.CZ",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL5D3/GXH4dBF3/2mbSjYIDlKYYJSzDNb+211QOJWigdbeq7QOY9xE6RxB8S4VMXwQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELScqpS+lCqZ80byFUuwphRZnRLLoKPb4Yif+WCSQChAdDwpMr338MGkmbeb8Asf4w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
