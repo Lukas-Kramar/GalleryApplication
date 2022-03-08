@@ -1,18 +1,12 @@
 ﻿@import "colors.css";
 
 h1{
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
 font-size: 30px;
 line-height: 35px;
-color: var(--semidark);
+color: var(--dark);
 }
 
 h3{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 17px;
     line-height: 20px;
     margin: 0;
@@ -24,25 +18,16 @@ a{
 }
 
 .Upload_text {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 25px;
     line-height: 29px;
 }
 
 .Gallery_Name{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 19px;
 }
 
 .Footer_Button{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 20px;
 }
@@ -75,6 +60,8 @@ a{
     font-style: normal;
     font-size: large;
 }
+
+
 html {
     font-family: 'fredoka';
     font-size: 100%;

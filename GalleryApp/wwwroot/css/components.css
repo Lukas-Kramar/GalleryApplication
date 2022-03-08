@@ -1,10 +1,24 @@
 ﻿@import "colors.css";
 @import "typography.css";
 
-.Upload_Button{
+.Upload{
     border: 3px solid var(--semidark);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 12px;
+    padding: 15px;
+    width: 90%;
+    font-size: 20px;
+}
+
+.form-group{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+input, select{
+  font-size: 18px;
+  font-family: 'fredoka';
+  color: var(--semidark);
 }
 
 * {
@@ -69,7 +83,12 @@ header{
     grid-column-start: 1;
     grid-column-end: 2;
     background-color: var(--semidark);
+    color: var(--light);
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }
+
 
 .Text{
     display: flex;
@@ -98,6 +117,26 @@ footer{
   margin-right: auto;
 }
 
+.Back{
+  font-family: 'fredoka';
+  color: var(--semidark);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.Create{
+  font-size: 24px;
+  color: var(--semidark);
+}
+.Create:hover{
+  font-size: 25px;
+  color: var(--blue);
+}
+
+.Back:hover{
+  color: var(--blue);
+}
+
 .Credentials{
     align-items: center;
     text-align: center;
@@ -108,9 +147,11 @@ footer{
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
+    font-family: 'fredoka';
 }
 
 .Footer_Greeting{
+  font-family: 'fredoka';
   font-size: 15px;
   line-height: 18px;
   grid-column-start: 1;
@@ -129,7 +170,7 @@ footer{
 }
 .Index_Main{
     display: grid;
-    grid-template-rows: 30px 1fr 30px 1fr;
+    grid-template-rows: 20px auto auto;
     grid-template-columns: 1fr; 
 }
 .Index_Sorted{
@@ -237,27 +278,27 @@ footer{
 .card__title {
   font-size: 1em;
   margin: 0 0 .3em;
-  color: #6A515E;
+  color: var(--semidark);
 }
 
 .card__tagline {
   display: block;
   margin: 1em 0;
-  font-family: "MockFlowFont";  
+  font-family: "roboto";  
   font-size: .8em; 
-  color: #D7BDCA;  
+  color: var(--lightblue);  
 }
 
 .card__status {
   font-size: .8em;
-  color: #D7BDCA;
+  color: var(--lightblue);
 }
 
 .card__description {
   padding: 0 2em 2em;
   margin: 0;
-  color: #D7BDCA;
-  font-family: "MockFlowFont";   
+  color: var(--lightblue);
+  font-family: "roboto";   
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;

@@ -5,105 +5,211 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Galleries</h1>
-<h2>Your Galleries</h2>
+<div class="Name_Menu"> <h1>Galleries</h1></div>
 <p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
+    <a class="Create" asp-page="Create">Create New</a>
+</p>@*
+    <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.OwnerGalleries[0].Creator)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OwnerGalleries[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OwnerGalleries[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OwnerGalleries[0].NumberOfPicture)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OwnerGalleries[0].isPublic)
-            </th>
-            <th>Thumbnail</th>
-            <th></th>
-        </tr>
+    <tr>
+    <th>
+    @Html.DisplayNameFor(model => model.OwnerGalleries[0].Creator)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.OwnerGalleries[0].Name)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.OwnerGalleries[0].Description)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.OwnerGalleries[0].NumberOfPicture)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.OwnerGalleries[0].isPublic)
+    </th>
+    <th>Thumbnail</th>
+    <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.OwnerGalleries) {
-        <tr>
-            <td>
-                @if(item.Creator.NickName != null) { @Html.DisplayFor(modelItem => item.Creator.NickName) }
-                else{ @Html.DisplayFor(modelItem => item.Creator.Email) }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfPicture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.isPublic)
-            </td>
-            <td>@if(item.NumberOfPicture > 0) {<img src="@Url.Page("/Index","Thumbnail", new {filename=item.IdThumbnail })" />}</td>
-            <td>                
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                @if(!(item.Name.Contains("Default Gallery"))) {<a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>}                
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-
-<h2>Other users galleries which are public</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Galleries[0].Creator)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Galleries[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Galleries[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Galleries[0].NumberOfPicture)
-            </th>            
-            <th>Thumbnail</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Galleries) {
-        <tr>
-            <td>
-                @if(item.Creator.NickName != null) { @Html.DisplayFor(modelItem => item.Creator.NickName) }
-                else{ @Html.DisplayFor(modelItem => item.Creator.Email) }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfPicture)
-            </td>
-            <td>@if(item.NumberOfPicture > 0) {<img src="@Url.Page("/Index","Thumbnail", new {filename=item.IdThumbnail })" />}</td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>                                
-            </td>
-        </tr>
+    @foreach (var item in Model.OwnerGalleries) {
+    <tr>
+    <td>
+    @if(item.Creator.NickName != null) { @Html.DisplayFor(modelItem => item.Creator.NickName) }
+    else{ @Html.DisplayFor(modelItem => item.Creator.Email) }
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.NumberOfPicture)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.isPublic)
+    </td>
+    <td>@if(item.NumberOfPicture > 0) {<img src="@Url.Page("/Index","Thumbnail", new {filename=item.IdThumbnail })" />}</td>
+    <td>
+    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+    @if(!(item.Name.Contains("Default Gallery"))) {<a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>}
+    </td>
+    </tr>
     }
     </tbody>
-</table>
+    </table>
+
+    <h2>Other users galleries which are public</h2>
+    <table class="table">
+    <thead>
+    <tr>
+    <th>
+    @Html.DisplayNameFor(model => model.Galleries[0].Creator)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Galleries[0].Name)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Galleries[0].Description)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Galleries[0].NumberOfPicture)
+    </th>
+    <th>Thumbnail</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Galleries) {
+    <tr>
+    <td>
+    @if(item.Creator.NickName != null) { @Html.DisplayFor(modelItem => item.Creator.NickName) }
+    else{ @Html.DisplayFor(modelItem => item.Creator.Email) }
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.NumberOfPicture)
+    </td>
+    <td>@if(item.NumberOfPicture > 0) {<img src="@Url.Page("/Index","Thumbnail", new {filename=item.IdThumbnail })" />}</td>
+    <td>
+    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+    </td>
+    </tr>
+    }
+    </tbody>
+    </table>
+*@
+<div class="Index_Main">
+    <h3 class="Index_Main_Description">Your Galleries</h3>
+    <ul class="cards">
+        @if (Model.OwnerGalleries.Count > 0)
+        {
+            @foreach (var f in Model.OwnerGalleries)
+            {
+                <li>
+                    <a href="" class="card">
+                        @if (f.NumberOfPicture > 0)
+                        {
+                            <img src="@Url.Page("/Index","Thumbnail", new {filename=f.IdThumbnail })" class="card__image" alt="@f.Name" />
+                        }
+                        else
+                        {
+                            <img src="./images/no_gallery.png" class="card__image" alt="@f.Name" />
+                        }
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                    <h3 class="card__title">@f.Name</h3>
+                                    <span class="card__status">
+                                        Creator:
+                                        @if (f.Creator.NickName != null)
+                                        {
+                                            @f.Creator.NickName
+                                        }
+                                        else
+                                        {
+                                            @f.Creator.Email
+                                        }
+                                    </span>
+                                </div>
+                            </div>
+                            <ul class="card__description">
+                                <li>@f.Description</li>
+                                <li><a asp-page="./Edit" asp-route-id="@f.Id">Edit</a></li>
+                                <li><a asp-page="./Details" asp-route-id="@f.Id">Details</a></li>
+                                @if (!(f.Name.Contains("Default Gallery")))
+                                {
+                                    <li><a asp-page="./Delete" asp-route-id="@f.Id">Delete</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+            }
+        }
+
+        else
+        {
+            <li class="No_Data"> There are no uploaded pictures</li>
+        }
+    </ul>
+    <h3 class="Index_Main_Description">Other public Galleries</h3>
+    <ul class="cards">
+        @if (Model.Galleries.Count > 0)
+        {
+            @foreach (var f in Model.OwnerGalleries)
+            {
+                <li>
+                    <a href="" class="card">
+                        @if (f.NumberOfPicture > 0)
+                        {
+                            <img src="@Url.Page("/Index","Thumbnail", new {filename=f.IdThumbnail })" class="card__image" alt="@f.Name" />
+                        }
+                        else
+                        {
+                            <img src="./images/no_gallery.png" class="card__image" alt="@f.Name" />
+                        }
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                    <h3 class="card__title">@f.Name</h3>
+                                    <span class="card__status">
+                                        Creator:
+                                        @if (f.Creator.NickName != null)
+                                        {
+                                            @f.Creator.NickName
+                                        }
+                                        else
+                                        {
+                                            @f.Creator.Email
+                                        }
+                                    </span>
+                                </div>
+                            </div>
+                            <ul class="card__description">
+                                <li>@f.Description</li>
+                                <li><a asp-page="./Edit" asp-route-id="@f.Id">Edit</a></li>
+                                <li><a asp-page="./Details" asp-route-id="@f.Id">Details</a></li>
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+            }
+        }
+
+        else
+        {
+            <li class="No_Data"> There are no uploaded pictures</li>
+        }
+    </ul>
+</div>

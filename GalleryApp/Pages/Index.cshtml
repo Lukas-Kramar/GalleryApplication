@@ -25,7 +25,17 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                     <h3 class="card__title">@f.OriginalName</h3>
-                                    <span class="card__status">Creator: @f.Uploader.Email</span>
+                                    <span class="card__status">
+                                        Creator:
+                                        @if (f.Uploader.NickName != null)
+                                        {
+                                            @f.Uploader.NickName
+                                        }
+                                        else
+                                        {
+                                            @f.Uploader.Email
+                                        }
+                                    </span>
                                 </div>
                             </div>
                             <ul class="card__description">
@@ -48,15 +58,32 @@
         {
             @foreach (var f in Model.Galleries)
             {
-                <li>
+                 <li>
                     <a href="" class="card">
-                        <img src="@Url.Page("/Index","Thumbnail", new {filename=f.IdThumbnail })" class="card__image" alt="@f.Name" />
+                        @if (f.NumberOfPicture > 0)
+                        {
+                            <img src="@Url.Page("/Index","Thumbnail", new {filename=f.IdThumbnail })" class="card__image" alt="@f.Name" />
+                        }
+                        else
+                        {
+                            <img src="./images/no_gallery.png" class="card__image" alt="@f.Name" />
+                        }
                         <div class="card__overlay">
                             <div class="card__header">
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                     <h3 class="card__title">@f.Name</h3>
-                                    <span class="card__status">Creator: @f.Creator.Email</span>
+                                    <span class="card__status">
+                                        Creator:
+                                        @if (f.Creator.NickName != null)
+                                        {
+                                            @f.Creator.NickName
+                                        }
+                                        else
+                                        {
+                                            @f.Creator.Email
+                                        }
+                                    </span>
                                 </div>
                             </div>
                             <ul class="card__description">
@@ -72,3 +99,4 @@
             <p class="No_Data"> There are no uploaded galleries</p>
         }
     </ul>
+</div>

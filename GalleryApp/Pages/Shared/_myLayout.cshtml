@@ -39,15 +39,15 @@
                         <img class="Footer_Icon" src="./images/Login.png" alt=""> 
                         <h3>Logout</h3>
                     </a>
-                    <a class="Footer_Button asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-                        <img class="Footer_Icon" src="./images/Avatar.png" alt"">
-                        <h3>Registration</h3>
-                    </a>
+                    <a class="Footer_Button" id="Avatar" asp-area="Identity" asp-page="/Account/Register">
+                   <img class="Footer_Icon" src="./images/Avatar.png" alt"">
+                   <h3>Registration</h3>
+                </a>
             }
             else
             {
                 <p class="Footer_Greeting">Anonym user</p>
-                <a class="Footer_Button" id="LogOut" asp-area="Identity" asp-page="/Account/Login">
+                <a class="Footer_Button" asp-area="Identity" asp-page="/Account/Login">
                     <img class="Footer_Icon" src="./images/Login.png" alt=""> 
                     <h3>Login</h3>
                 </a>

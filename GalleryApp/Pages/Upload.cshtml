@@ -6,20 +6,20 @@
 <div class="Name_Menu"><h1>New file upload</h1></div>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="Upload">
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label asp-for="Upload" class="control-label">File</label>
                 <input type="file" asp-for="Upload" class="form-control-file" multiple required />
             </div>
-            <div class="form-group">
+            <div class="form-group Upload_Button">
                 <input type="submit" value="Upload" class="btn btn-primary" />
-                <a class="btn btn-secondary" asp-page="/Index">Back</a>
             </div>
             <div class="form-group">
                 <label asp-for="GalleryStoredFile.GalleryId" class="control-label"></label>
                 <select asp-for="GalleryStoredFile.GalleryId" class="form-control" asp-items="ViewBag.Gallery"></select>
             </div>
         </form>
+        <a class="Back" asp-page="/Index">Back</a>
     </div>
 </div>
