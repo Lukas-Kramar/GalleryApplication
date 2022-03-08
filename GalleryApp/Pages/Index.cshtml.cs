@@ -22,6 +22,7 @@ namespace GalleryApp.Pages
         [TempData]
         public string ErrorMessage { get; set; }    
         public List<StoredFileListViewModel> StoredFiles { get; set; }
+        public List<Gallery> Galleries { get; set; }
         //public List<StoredFile>
 
         public IndexModel(ILogger<IndexModel> logger, IWebHostEnvironment environment, ApplicationDbContext context)
@@ -50,6 +51,13 @@ namespace GalleryApp.Pages
               .OrderBy(f => f.UploadedAt)
               .Take(12)
               .ToList();
+
+            Galleries =  _context.Galleries
+                .Include(g => g.Creator)
+                .Include(g => g.StoredPictures)
+                .Where(g => g.isPublic == true)
+                .Take(12)
+                .ToList();
 
             //var fullNames = Directory.GetFiles(Path.Combine(_environment.ContentRootPath, "Uploads")).ToList();
             //    foreach (var fn in fullNames)

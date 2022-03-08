@@ -1,0 +1,6 @@
+﻿@page
+@model GalleryApp.Areas.User.Pages.CRUD_StoredFile.ViewFullSizeModel
+@{
+}
+<h2>kde je obrazek?</h2>
+<img class="VelkyPicture" src="@Url.Page("/DetailsPhoto","FullSize", new {filename=Model.StoredFile.Id })" />

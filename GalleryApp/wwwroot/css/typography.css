@@ -1,0 +1,54 @@
+﻿@import "colors.css";
+
+h1{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 35px;
+color: var(--semidark);
+}
+
+
+h3{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.Upload_text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.Gallery_Name{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.Footer_Button{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.Footer_Greeting{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

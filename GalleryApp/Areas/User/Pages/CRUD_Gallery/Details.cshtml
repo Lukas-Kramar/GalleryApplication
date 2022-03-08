@@ -56,11 +56,13 @@
                         <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" />
                         <a class="btn btn-sm btn-secondary" asp-page-handler="thumbnail" asp-route-filename="@f.Id">Thumbnail</a>
                         <a class="btn btn-sm btn-secondary" asp-page-handler="thumbnail" asp-route-filename="@f.Id" asp-route-type="1">Miniature</a>
-                        <a class="btn btn-sm btn-primary" asp-page-handler="download" asp-route-filename="@f.Id">Download</a>                        
+                        <a class="btn btn-sm btn-primary" asp-page-handler="download" asp-route-filename="@f.Id">Download</a>    
+                        <a class="btn btn-sm btn-primary"asp-page="/CRUD_StoredFile/ViewFullSize" asp-route-filename="@f.Id">FullSize</a>      
                         <a class="btn btn-sm btn-danger" asp-area="User" asp-page="/CRUD_StoredFile/Delete"  asp-route-id="@f.Id">Delete</a>
                         <a class="btn btn-sm btn-primary" asp-page-handler="makethumbnail" asp-route-storedfileid="@f.Id" asp-route-galleryid="@Model.Gallery.Id">Select as thumbnail for gallery</a>         
                     </td>
                 </tr>
+
             }
         </tbody>
     </table>

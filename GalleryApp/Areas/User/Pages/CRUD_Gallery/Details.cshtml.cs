@@ -127,27 +127,6 @@ namespace GalleryApp.Areas.User.CRUD_Gallery
             }
             return NotFound("no thumbnail for this file");
         }
-
-        //public async Task<IActionResult> OnPostDeleteFromGallery (Guid? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    GalleryStoredFile = await _context.GalleryStoredFiles.FindAsync(id);
-
-        //    if (GalleryStoredFile != null)
-        //    {
-        //        _context.GalleryStoredFiles.Remove(GalleryStoredFile);
-        //        await _context.SaveChangesAsync();
-        //        SuccessMessage = "Deleted from Gallery";
-        //    }
-
-        //    return RedirectToPage("./Index");
-            
-        //}
-
         public async Task<IActionResult> OnGetMakethumbnail(string storedfileid, string galleryid)
         {
            
@@ -183,8 +162,29 @@ namespace GalleryApp.Areas.User.CRUD_Gallery
                 ErrorMessage = "Picture isnt´t in this gallery";
             }
             return RedirectToPage("./Index");
-
         }
+        //public IActionResult OnGetFullSize(string filename)
+        //{
+        //    var fullName = Path.Combine(_environment.ContentRootPath, "Uploads", filename);
+
+        //    if (System.IO.File.Exists(fullName))
+        //    {
+        //        var fileRecord = _context.F.Find(Guid.Parse(filename));
+
+        //        if (fileRecord != null)
+        //        {
+        //            return File(System.IO.File.OpenRead(fullName), fileRecord.ContentType);
+        //        }
+        //        else
+        //        {
+        //            return RedirectToPage();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return RedirectToPage();
+        //    }
+        //}
 
     }
 }
